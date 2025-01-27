@@ -1,1 +1,72 @@
-<p>data-binding works!</p>
+<div class="row">
+  <div class="col-6 bg-success p-3">
+    <h1>One Way</h1>
+    <div class="row">
+      <div class="col-6 bg-warning p-3">
+        from .ts to .html
+        <br>
+        => interpolation & property binding
+      </div>
+      <div class="col-6 bg-secondary p-3">
+        from .html to .ts
+        <br>
+        => event binding
+      </div>
+    </div>
+  </div>
+  <div class="col-6 bg-danger">
+    <h1>Two Way</h1>
+    <!-- diretives  -->
+  </div>
+</div>
+
+
+<!-- one way -->
+<div class="row">
+  <div class="col-3">
+    <!-- interpolation  -->
+    course name => {{courseName}}
+    <br>
+    <h1>{{courseDur}}</h1>
+  </div>
+  <div class="col-3">
+    <input type="text" placeholder="enter name" name="" id="" value={{courseName}}>
+  </div>
+  <div class="col-3">
+    <!-- property binding  -->
+    <input type="text" name="" [value]="courseName" id="" [placeholder]="myPlaceHolder">
+  </div>
+  <div class="col-3">
+    <div [class]="clsName">
+      divvv
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-3">
+    <!-- event binding  -->
+    <button class="btn btn-primary" (click)="shiwWelcomeText()"> Show Alert</button>
+  </div>
+  <div class="col-2">
+    <button class="btn btn-primary" (click)="showMsgmsg('aman')"> Show MSG</button>
+  </div>
+  <div class="col-3">
+    <select name="" id="" (change)="onStateChange()">
+      <option value="">M</option>
+      <option value="">P</option>
+      <option value="">G</option>
+    </select>
+  </div>
+</div>
+
+<!-- two way  -->
+<div class="row pt-3">
+  <div class="col-3">
+    <input type="text" name="" id="" [(ngModel)]="courseName">
+  </div>
+  <div class="col-3">
+    {{isActive}}
+    <input type="checkbox" name="" id="" [(ngModel)]="isActive">
+  </div>
+</div>
