@@ -1,0 +1,181 @@
+<!-- structural  -->
+<!-- <div class="row">
+  <div class="col-3">
+    <div class="bg-primary p-3" *ngIf="isDiv1Vis">
+      Div1
+    </div>
+  </div>
+
+  <div class="col-3">
+    <div class="bg-primary p-3" *ngIf="isdiv2vis ">
+      Div2
+    </div>
+  </div>
+
+  <div class="col-3">
+    <div class="bg-primary p-3" *ngIf="num1==num2">
+      Div3
+    </div>
+  </div>
+</div> -->
+
+<!-- <div class="row pt-2">
+  <div class="col-3">
+    @if (isDiv1Vis == true) {
+    <div class="bg-primary p-3">
+      Div11
+    </div>
+    }
+    @else {
+    <div class="bg-danger p-3">
+      Div15
+    </div>
+    }
+  </div>
+
+  <div class=" col-3">
+    <div class="bg-primary p-3" *ngIf="isdiv2vis ">
+      Div22
+    </div>
+  </div>
+
+  <div class="col-3">
+    <div class="bg-primary p-3" *ngIf="num1==num2">
+      Div33
+    </div>
+  </div>
+
+  <div class="col-3">
+    <div class="row">
+      <div class="col-6">
+        <label for="">Select cast - {{selectedCast}}</label>
+        <select name="" id="" class="form-control" [(ngModel)]="selectedCast">
+          <option value="">OBC</option>
+          <option value="">SC</option>
+          <option value="">Open</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+      <div class="col-6" *ngIf="selectedCast=='Other'">
+        <label for="">Other Cast</label>
+        <input type="text" name="" placeholder="Enter other cast" id="">
+      </div>
+    </div>
+  </div>
+
+</div> -->
+
+<!-- <div class="row pt-3">
+  <div class="col-3 text-center">
+    <button class="btn btn-danger" (click)="hide()">Hide</button>
+    <button class="btn btn-primary" (click)="show()">Show</button>
+  </div>
+
+  <div class="col-3 text-center">
+    <button class="btn btn-danger" (click)="hideShow2(false)">Hide</button>
+    <button class="btn btn-primary" (click)="hideShow2(true)">Show</button>
+  </div>
+
+  <div class="col-3 text-center">
+    <input type="text" name="" placeholder="num1" id="" [(ngModel)]="num1">
+    <input type="text" name="" placeholder="num2" id="" [(ngModel)]="num2">
+  </div>
+</div> -->
+
+<!-- <div class="row">
+  <div class="col-3">
+    <ul>
+      <li *ngFor="let city of cityList">
+        {{city}}
+      </li>
+    </ul>
+  </div>
+  <div class="col-3">
+    <select name="" id="">
+      <option value="">select city</option>
+      <option value="" *ngFor="let city of cityList">{{city}}</option>
+    </select>
+  </div>
+  <div class="col-5">
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Sr No</th>
+          <th>Name</th>
+          <th>City</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of studentList; let sr = index">
+          <td>{{sr+1}}</td>
+          <td>{{item.name}}</td>
+          <td>{{item.city}}</td>
+          <td>
+            <p *ngIf="item.isActive == true">Student is Active</p>
+            <p *ngIf="item.isActive == false">Student is Inactive</p>
+
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div> -->
+
+<!-- <div class="row">
+  <div class="col-3">
+    <ul>
+      <li *ngFor="let city of cityList">
+        {{city}}
+      </li>
+    </ul>
+  </div>
+  <div class="col-3">
+    <ul>
+      <li *ngIf="let city of cityList">{{city}}</li>
+    </ul>
+    <ol>
+      @for (item of cityList; track $index) {
+      <li>{{item}}</li>
+      }
+    </ol>
+  </div>
+</div> -->
+
+<!-- attribute directive -->
+<div class="row">
+  <div class="col-3">
+    <div class="p-3" [ngClass]="studDivClsName">
+      Student
+    </div>
+  </div>
+
+  <div class="col-3">
+    <div class="p-3" [ngClass]="stuEmpDivClass">
+      Employee
+    </div>
+  </div>
+
+  <div class="col-3">
+    <div class="p-3" [ngClass]="prodClass">
+      Product
+    </div>
+  </div>
+
+  <div class="col-3">
+    <div class="p-3" [ngClass]="isOrderActive?'bg-success':'bg-danger'">
+      Order
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-3"><input type="text" name="" id="" [(ngModel)]="stuEmpDivClass"></div>
+  <div class="col-3">
+    <button class="btn btn-danger" (click)="addProdClass('green')">Green</button>
+    <button class="btn btn-primary" (click)="addProdClass('red')">Red</button>
+  </div>
+  <div class="col-3">
+    <input type="checkbox" name="" [(ngModel)]="isOrderActive" id="">
+  </div>
+</div>
