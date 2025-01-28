@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterLink, RouterOutlet } from '@angular/router';
 import { VariablesComponent } from './components/variables/variables.component';
 import { DataBindingComponent } from './components/data-binding/data-binding.component';
 import { DirectiveComponent } from './components/directive/directive.component';
@@ -8,6 +8,7 @@ import { DirectiveComponent } from './components/directive/directive.component';
   selector: 'app-root',
   imports: [
     RouterOutlet,
+    RouterLink,
     VariablesComponent,
     DataBindingComponent,
     DirectiveComponent,
