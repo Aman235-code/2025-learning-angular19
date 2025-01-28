@@ -2,6 +2,7 @@ import { Routes } from '@angular/router';
 import { DataBindingComponent } from './components/data-binding/data-binding.component';
 import { DirectiveComponent } from './components/directive/directive.component';
 import { VariablesComponent } from './components/variables/variables.component';
+import { TemplateFormComponent } from './components/template-form/template-form.component';
 
 export const routes: Routes = [
   {
@@ -15,5 +16,9 @@ export const routes: Routes = [
   {
     path: 'variable',
     component: VariablesComponent,
+  },
+  {
+    path: 'templateForm',
+    component: TemplateFormComponent,
   },
 ];
