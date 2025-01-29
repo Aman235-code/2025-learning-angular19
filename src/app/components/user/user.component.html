@@ -1,0 +1,81 @@
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-7">
+      <div class="card">
+        <div class="card-header bg-success">
+          <h2>User List</h2>
+        </div>
+        <div class="card-body">
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Username</th>
+                <th>Password</th>
+                <th>Full Name</th>
+                <th>Role</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              @for (item of userList; track $index) {
+              <tr>
+                <td>{{$index + 1}}</td>
+                <td>{{item.userName}}</td>
+                <td>{{item.password}}</td>
+                <td>{{item.fullName}}</td>
+                <td>{{item.role}}</td>
+                <td>
+                  <button class="btn btn-primary btn-sm me-2" (click)="onEdit(item)"> Edit</button>
+                  <button class="btn btn-danger btn-sm">Delete</button>
+                </td>
+              </tr>
+              } 
+
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+
+    </div>
+    <div class="col-5">
+      <div class="card">
+        <div class="card-header bg-success">
+          <h1>User Form</h1>
+        </div>
+        <div class="card-body">
+          <form>
+
+            <div class="mb-3">
+              <label class="form-label">Username</label>
+              <input type="text" class="form-control" [(ngModel)]="userObj.userName" name="userName" required>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Email</label>
+              <input type="email" class="form-control" [(ngModel)]="userObj.emailId" name="emailId" required>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Full Name</label>
+              <input type="text" class="form-control" [(ngModel)]="userObj.fullName" name="fullName" required>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Role</label>
+              <input type="text" class="form-control" [(ngModel)]="userObj.role" name="role" required>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">Password</label>
+              <input type="password" class="form-control" [(ngModel)]="userObj.password" name="password" required>
+            </div>
+
+
+            <button type="submit" (click)="onSaveUser()" class="btn btn-success m-2">Submit</button>
+            <button type="submit" class="btn btn-danger">Cancel</button>
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
