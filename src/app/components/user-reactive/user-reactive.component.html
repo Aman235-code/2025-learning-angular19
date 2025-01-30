@@ -68,6 +68,21 @@
             <div class="mb-3">
               <label class="form-label">Username</label>
               <input type="text" formControlName="userName" class="form-control" name="userName" required>
+              @if (userForm.controls['userName'].touched) {
+              <div class="text-danger">
+                @if (userForm.controls['userName'].errors?.['required']) {
+                <span>This is required</span>
+                }
+
+                @if (userForm.controls['userName'].errors?.['minLength']) {
+                <span>Min 5 chars needed</span>
+                }
+
+
+
+              </div>
+              }
+
             </div>
             <div class="mb-3">
               <label class="form-label">Email</label>

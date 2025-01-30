@@ -49,7 +49,20 @@
 
             <div class="mb-3">
               <label class="form-label">Username</label>
-              <input type="text" class="form-control" [(ngModel)]="userObj.userName" name="userName" required>
+              <input type="text" class="form-control" #uName="ngModel" minlength="4" [(ngModel)]="userObj.userName"
+                name="userName" required>
+              @if (uName.touched || uName.dirty) {
+              <div class="text-danger">
+                @if(uName.errors?.['required']){
+                <span>This is required</span>
+                }
+                @if(uName.errors?.['minlength']){
+                <span>Min 4 characters needed</span>
+                }
+
+              </div>
+              }
+
             </div>
             <div class="mb-3">
               <label class="form-label">Email</label>
