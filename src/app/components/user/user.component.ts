@@ -47,6 +47,32 @@ export class UserComponent {
       });
   }
 
+  onUpdateUser() {
+    this.httpClient
+      .post(
+        'https://projectapi.gerasim.in/api/Complaint/UpdateUser',
+        this.userObj
+      )
+      .subscribe((res: any) => {
+        this.getUsers();
+      });
+  }
+
+  onDeleteUser(itemuserId: number) {
+    const isConfirm = confirm('Are you sure you want to delete?');
+    if (isConfirm) {
+      this.httpClient
+        .delete(
+          'https://projectapi.gerasim.in/api/Complaint/DeleteUserByUserId?userId=' +
+            itemuserId,
+          this.userObj
+        )
+        .subscribe((res: any) => {
+          this.getUsers();
+        });
+    }
+  }
+
   onEdit(item: any) {
     this.userObj = item;
   }

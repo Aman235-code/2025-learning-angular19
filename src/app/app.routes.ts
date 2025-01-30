@@ -5,6 +5,7 @@ import { VariablesComponent } from './components/variables/variables.component';
 import { TemplateFormComponent } from './components/template-form/template-form.component';
 import { ApiCallComponent } from './components/api-call/api-call.component';
 import { UserComponent } from './components/user/user.component';
+import { UserReactiveComponent } from './components/user-reactive/user-reactive.component';
 
 export const routes: Routes = [
   {
@@ -30,5 +31,9 @@ export const routes: Routes = [
   {
     path: 'user',
     component: UserComponent,
+  },
+  {
+    path: 'user-reactive',
+    component: UserReactiveComponent,
   },
 ];
