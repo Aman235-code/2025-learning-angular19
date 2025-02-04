@@ -21,8 +21,8 @@
               @for (item of userList; track $index) {
               <tr>
                 <td>{{$index + 1}}</td>
-                <td>{{item.userName}}</td>
-                <td>{{item.password}}</td>
+                <td>{{item.userName | uppercase}}</td>
+                <td>{{item.password | lowercase}}</td>
                 <td>{{item.fullName}}</td>
                 <td>{{item.role}}</td>
                 <td>
