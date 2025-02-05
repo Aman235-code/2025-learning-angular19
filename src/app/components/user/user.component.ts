@@ -1,11 +1,11 @@
-import { LowerCasePipe, UpperCasePipe } from '@angular/common';
+import { DatePipe, JsonPipe, LowerCasePipe, UpperCasePipe } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Component, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-user',
-  imports: [FormsModule, UpperCasePipe, LowerCasePipe],
+  imports: [FormsModule, UpperCasePipe, LowerCasePipe, DatePipe, JsonPipe],
   templateUrl: './user.component.html',
   styleUrl: './user.component.css',
 })

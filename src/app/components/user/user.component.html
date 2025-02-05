@@ -1,4 +1,5 @@
 <div class="container mt-4">
+  {{userObj | json}}
   <div class="row">
     <div class="col-7">
       <div class="card">
@@ -14,6 +15,7 @@
                 <th>Password</th>
                 <th>Full Name</th>
                 <th>Role</th>
+                <th>Date</th>
                 <th>Actions</th>
               </tr>
             </thead>
@@ -25,6 +27,7 @@
                 <td>{{item.password | lowercase}}</td>
                 <td>{{item.fullName}}</td>
                 <td>{{item.role}}</td>
+                <td>{{item.createdDate | date}}</td>
                 <td>
                   <button class="btn btn-primary btn-sm me-2" (click)="onEdit(item)"> Edit</button>
                   <button class="btn btn-danger btn-sm" (click)="onDeleteUser(item.userId)">Delete</button>

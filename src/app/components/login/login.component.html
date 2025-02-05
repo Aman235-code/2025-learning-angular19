@@ -1,0 +1,27 @@
+<div class="parent">
+  <div class="container">
+    <div class="wrapper">
+      <form action="">
+        <h1>Login</h1>
+        <div class="input-box">
+          <input type="text" [(ngModel)]="loginObj.username" name="username" placeholder="Username" required>
+          <i class='bx bxs-user'></i>
+        </div>
+        <div class="input-box">
+          <input type="password" [(ngModel)]="loginObj.password" name="password" placeholder=" Password" required>
+          <i class='bx bxs-lock-alt'></i>
+        </div>
+        <div class="remember-forget">
+
+        </div><br>
+        <button type="submit" class="btn" (click)="onLogin()">Login</button>
+        <div class="register-link">
+          <a href="#">Forget password?</a>
+        </div>
+        <div class="register-link">
+          <p>Don't have an account? <a href="#">Register</a></p>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

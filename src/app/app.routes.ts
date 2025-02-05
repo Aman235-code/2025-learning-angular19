@@ -7,38 +7,57 @@ import { ApiCallComponent } from './components/api-call/api-call.component';
 import { UserComponent } from './components/user/user.component';
 import { UserReactiveComponent } from './components/user-reactive/user-reactive.component';
 import { ResourceApiComponent } from './resource-api/resource-api.component';
+import { LoginComponent } from './components/login/login.component';
+import { LayoutComponent } from './components/layout/layout.component';
+import { checkloginGuard } from './guard/checklogin.guard';
 
 export const routes: Routes = [
   {
-    path: 'data-binding',
-    component: DataBindingComponent,
+    path: '',
+    redirectTo: 'login',
+    pathMatch: 'full',
   },
   {
-    path: 'directive',
-    component: DirectiveComponent,
+    path: 'login',
+    component: LoginComponent,
   },
   {
-    path: 'variable',
-    component: VariablesComponent,
-  },
-  {
-    path: 'templateForm',
-    component: TemplateFormComponent,
-  },
-  {
-    path: 'api-call',
-    component: ApiCallComponent,
-  },
-  {
-    path: 'user',
-    component: UserComponent,
-  },
-  {
-    path: 'user-reactive',
-    component: UserReactiveComponent,
-  },
-  {
-    path: 'resource-api',
-    component: ResourceApiComponent,
+    path: '',
+    component: LayoutComponent,
+    canActivate: [checkloginGuard],
+    children: [
+      {
+        path: 'data-binding',
+        component: DataBindingComponent,
+      },
+      {
+        path: 'directive',
+        component: DirectiveComponent,
+      },
+      {
+        path: 'variable',
+        component: VariablesComponent,
+      },
+      {
+        path: 'templateForm',
+        component: TemplateFormComponent,
+      },
+      {
+        path: 'api-call',
+        component: ApiCallComponent,
+      },
+      {
+        path: 'user',
+        component: UserComponent,
+      },
+      {
+        path: 'user-reactive',
+        component: UserReactiveComponent,
+      },
+      {
+        path: 'resource-api',
+        component: ResourceApiComponent,
+      },
+    ],
   },
 ];
